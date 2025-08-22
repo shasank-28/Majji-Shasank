@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exam Registration</title>
+  <style>
+    :root {
+      --bg: #0f1724; /* Dark navy */
+      --card: #0b1220;
+      --accent: #06b6d4;
+      --muted: #9aa6b2;
+      --glass: rgba(255, 255, 255, 0.04);
+      --radius: 12px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #071024 0%, #0b1530 100%);
+      color: #e6eef6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 36px auto;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: clamp(26px, 4.5vw, 40px);
+      margin-bottom: 12px;
+    }
+    option{
+      color:#071024;
+    }
+
+    .nav {
+      background: var(--glass);
+      backdrop-filter: blur(6px);
+      border-radius: var(--radius);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), #7c3aed);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .nav-links a {
+      color: inherit;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 10px;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .btn {
+      background: var(--accent);
+      color: #042028;
+      padding: 8px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .grid {
+      display: block;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+      padding: 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    label {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      background: transparent;
+      color: inherit;
+    }
+
+    .small {
+      font-size: 13px;
+    }
+
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    input:focus, select:focus, textarea:focus, a:focus, button:focus {
+      outline: 3px solid rgba(6, 182, 212, 0.12);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Exam Registration</h1>
+    </header>
+
+    <!-- Navbar Section -->
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">ER</div>
+        <div>
+          <div style="font-weight: 700">ExamReg</div>
+          <div class="muted" style="font-size: 12px">Register · Take · Track</div>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#home" data-nav>Home</a>
+        <a href="#login" data-nav>Login</a>
+        <a href="#register" data-nav>Registration</a>
+        <a href="#test" data-nav>Test</a>
+        <a href="#result" data-nav>Result</a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="grid">
+      <!-- Home Section -->
+      <section class="card" id="home">
+        <h2>Welcome to Exam Registration</h2>
+      </section>
+
+      <!-- Login Section -->
+      <aside>
+        <div class="card" id="login">
+          <h3>Student Login</h3>
+          <form id="loginForm">
+            <label for="username">Username</label>
+            <input id="username" type="text" placeholder="" required />
+            <label for="loginPass">Password</label>
+            <input id="loginPass" type="password" placeholder="" required />
+            <button class="btn" type="submit">Login</button>
+          </form>
+        </div>
+
+        <div style="height: 12px;"></div>
+
+        <!-- Admin Login Section -->
+        <div class="card" id="admin-login">
+          <h3>Admin Login</h3>
+          <form id="adminLoginForm">
+            <label for="adminId">Admin ID</label>
+            <input id="adminId" type="text" placeholder="" required />
+            <label for="adminPass">Password</label>
+            <input id="adminPass" type="password" placeholder="" required />
+            <button class="btn" type="submit">Login</button>
+          </form>
+        </div>
+
+        <!-- Registration Section -->
+        <div class="card" id="register">
+          <h3>Registration</h3>
+          <form id="regForm">
+            <label for="fullName">Full Name</label>
+            <input id="fullName" placeholder="" required />
+            <label for="regEmail">Email</label>
+            <input id="regEmail" type="email" placeholder="" required />
+            <label for="branch">Branch</label>
+            <input id="branch" type="text" placeholder="" />
+            <label for="course">Select Course</label>
+            <select id="course">
+              <option>Python</option>
+              <option>HTML</option>
+              <option>C++</option>
+            </select>
+            <button class="btn" type="submit">Register</button>
+          </form>
+        </div>
+        <div class="card" id="test">
+  <h3>Test Page</h3>
+  <form id="testForm">
+    <!-- Question 1 -->
+    <label for="question1">1. What does HTML stand for?</label>
+    <div>
+      <input type="radio" id="q1_option1" name="question1" value="HyperText Markup Language" required />
+      <label for="q1_option1">HyperText Markup Language</label>
+    </div>
+    <div>
+      <input type="radio" id="q1_option2" name="question1" value="HighText Machine Language" />
+      <label for="q1_option2">HighText Machine Language</label>
+    </div>
+    <div>
+      <input type="radio" id="q1_option3" name="question1" value="Hyperlink Text Markup Language" />
+      <label for="q1_option3">Hyperlink Text Markup Language</label>
+    </div>
+
+    <!-- Question 2 -->
+    <label for="question2">2. Which tag is used for creating a hyperlink in HTML?</label>
+    <div>
+      <input type="radio" id="q2_option1" name="question2" value="<a>" required />
+      <label for="q2_option1">&lt;a&gt;</label>
+    </div>
+    <div>
+      <input type="radio" id="q2_option2" name="question2" value="<link>" />
+      <label for="q2_option2">&lt;link&gt;</label>
+    </div>
+    <div>
+      <input type="radio" id="q2_option3" name="question2" value="<hyperlink>" />
+      <label for="q2_option3">&lt;hyperlink&gt;</label>
+    </div>
+
+    <!-- Question 3 -->
+    <label for="question3">3. What is the correct HTML for inserting an image?</label>
+    <div>
+      <input type="radio" id="q3_option1" name="question3" value="<img src='image.jpg'>" required />
+      <label for="q3_option1">&lt;img src='image.jpg'&gt;</label>
+    </div>
+    <div>
+      <input type="radio" id="q3_option2" name="question3" value="<image src='image.jpg'>" />
+      <label for="q3_option2">&lt;image src='image.jpg'&gt;</label>
+    </div>
+    <div>
+      <input type="radio" id="q3_option3" name="question3" value="<img href='image.jpg'>" />
+      <label for="q3_option3">&lt;img href='image.jpg'&gt;</label>
+    </div>
+
+    <button class="btn" type="submit">Submit</button>
+  </form>
+</div>
+<div class="card" id="result">
+        <h3>Test Result</h3>
+        <form id="resultForm">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Enter your name" required />
+
+          <label for="rollNo">Roll Number</label>
+          <input id="rollNo" type="text" placeholder="Enter your roll number" required />
+
+          <label for="course">Course</label>
+          <input id="course" type="text" value="HTML" readonly />
+
+          <label for="grade">Grade</label>
+          <input id="grade" type="text" placeholder="Your grade" readonly />
+
+          <label for="status">Status</label>
+          <input id="status" type="text" placeholder="Your status" readonly />
+
+          <button class="btn" type="submit">View Result</button>
+        </form>
+      </div>
+
+      </aside>
+    </main>
